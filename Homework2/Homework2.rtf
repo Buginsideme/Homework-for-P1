@@ -1,0 +1,31 @@
+Homework2
+
+
+Si vuole implementare un elenco di voci costituite dalla coppia (chiave, descrizione) rappresentato mediante un vettore di record.
+Il record che implementa il tipo voce è costituito quindi dai campi chiave (numero intero) e descrizione (stringa C allocata dinamicamente). Su tale tipo vengano fornite le seguenti funzionalità:
+- create  // crea una voce , consentire sia all’utente di inizializzarla sia di definirla senza provvedere ad 
+          // una inizializzazione
+- read(e) // consente l’ingresso di una voce da tastiera
+- write(e) // consente la visualizzazione di una voce
+- copy(e1,e2) // copia e2 in e1
+- equal(e1, e2) // relazione di uguaglianza, stabilisce cioè se le voci in ingresso sono uguali
+- greater_than(e1, e2); // relazione >, stabilisce se la voce e1 è maggiore della voce e2
+- destroy(e) // dealloca l'area allocata dinamicamente e "azzera" la voce e.
+Per ipotesi, due voci sono uguali se e solo se sono uguali i valori di entrambi i campi (chiave e descrizione), invece la relazione “greater_than” tiene conto esclusivamente del valore del campo chiave.
+
+L’elenco è rappresentato mediante un vettore di elementi di dimensione massima fissata. Su tale struttura dati vengano fornite le seguenti funzionalità:
+- read(l,dim) // consente l’inizializzazione dell’elenco e l’ingresso dei suoi elementi da
+// tastiera
+- write(l,dim) // consente la visualizzazione dell’elenco
+- in(l,dim,x,pos) // determina se l’elemento x esiste nell’elenco e in caso affermativo pos
+// fornisce la posizione della sua prima occorrenza
+- sort(l,dim) // ordina l’elenco (in ordine crescente)
+- isFull(l,dim) // stabilisce se l’elenco è pieno
+- isEmpty(l,dim) // stabilisce se l’elenco è vuoto
+- insert(l,dim,e) // inserisce un elemento nell’elenco nella prima posizione libera
+- insert_ord(l,dim,e) // si applica ad un elenco ordinato. Inserisce l’elemento “e” rispettando
+// l’ordinamento (scompattamento)
+- remove(l,dim,e) // elimina la voce “e” dall’elenco se presente (compattamento)
+- is_sorted(l,dim) // stabilisce se l’elenco è ordinato (in ordine crescente)
+Si sviluppino e si verifichino le due parti separatamente, iniziando dalla “voce”.
+

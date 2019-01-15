@@ -1,0 +1,33 @@
+/*
+Sviluppare in C++ il tipo di dato astratto Prodotto utilizzando il costrutto class del
+linguaggio. La struttura dati è costituita dalla variabili membro Codice, Descrizione,
+Produttore e costo unitario. Si utilizzi per il Codice una stringa C di dimensione nota a
+tempo di compilazione  costituita da 8 caratteri, per la descrizione una stringa C allocata
+dinamicamente e per il Produttore un oggetto di tipo string (libreria standard), il costo è
+rappresentato da un variabile membro di tipo reale.
+Si forniscano sul tipo Prodotto le funzionalità necessarie ad una corretta gestione
+dell'estensione dinamica ed inoltre le seguenti funzioni membro: funzioni set e get per
+tutte le variabili membro, l'overloading degli operatori << , >>  e degli operatori relazionali
+(==,!=,<,>,<=,>=, questi ultimi sul costo unitario). Le funzioni set controllano che il codice
+sia composto esattamente da 8 caratteri di cui i primi due devono essere lettere
+maiuscole e che il costo sia un valore valido (non negativo).
+Si sviluppi un programma di test delle funzionalità implementate.
+*/
+
+#include"prodotto.h"
+
+int main() {
+        prodotto cell("AS345675","casa","topo",15),p,c(cell);
+
+        cell.set_cod("Casaoooo0");
+        //cin>>p;
+        cout<<cell.get_cod();
+        //cout<<p;
+        p=cell;
+        cout<<p;
+        //cout<<p.get_cod();
+        if (cell==p)
+                cout<<"\nSono uguali.";
+        cout<<"\n\n";
+        return 0;
+}

@@ -1,0 +1,34 @@
+Testo dell’ Esercizio
+
+
+Si progetti e si implementi, ricorrendo al costrutto class del linguaggio c++, un “vettore dinamico” (ridimensionabile).
+Un vettore dinamico è una struttura dati la cui dimensione può variare nel corso del suo utilizzo e consente all’utente di 
+espandere o contrarre il vettore aggiungendo o rimuovendo elementi. 
+Le funzionalità offerte sulla struttura dati devono pertanto consentire di ridimensionare il vettore quando necessario 
+(ad esempio quando viene inserito un nuovo elemento se non vi è più spazio nel vettore o quando si rimuovono degli elementi 
+per recuperare spazio). Il “reale” ridimensionamento è una operazione computazionalmente molto costosa, perché richiede la
+costruzione di un nuovo vettore e la copia degli elementi dal vecchio al nuovo vettore, pertanto per ragioni di efficienza 
+l’implementazione di un vettore dinamico normalmente è effettuata pre-allocando un certo numero di elementi in modo da averli 
+a disposizione quando si inserisce un nuovo elemento. Nel momento in cui viene richiesto un inserimento che eccede la 
+dimensione massima del vettore è necessario provvedere a una nuova allocazione di memoria dinamica.
+L’utente del vettore dinamico non deve evidentemente preoccuparsi delle dimensioni del vettore stesso: le sue dimensioni 
+variano durante l’esecuzione del programma in modo del tutto trasparente a chi lo utilizza.
+
+Si vuole dunque implementare una classe DynVet di elementi di tipo T che permetta di:
+
+• costruire un vettore pre-allocandone n elementi da inizializzare con un dato valore fornito dall’utente (n>=2)
+• assegnare un vettore ad un altro (dopo l'assegnazione i due vettori contengono gli stessi elementi)
+• inserire un elemento alla fine del vettore (ultimo elemento,“push_back”) 
+• rimuovere l'elemento che si trova alla fine del vettore (ultimo elemento,“pop_back”) 
+• restituire la lunghezza del vettore (il numero di elementi in esso contenuti) 
+• restituire il numero di elementi allocati (capacity) 
+• stabilire se il vettore è vuoto (“empty”) 
+• ridimensionare il vettore a una data dimensione (“resize”). 
+
+Per semplicità si supponga che una nuova allocazione dinamica in memoria possa avvenire solo nell’inserimento di un nuovo 
+elemento, e non in seguito ad una richiesta di rimozione di un elemento. Pertanto la funzionalità “resize” è utilizzata 
+esclusivamente dalla funzione “push_back” (ed è nascosta all’utente). Si realizzi infine un programma di test della classe 
+e delle funzionalità fornite.
+
+Suggerimento: le variabili membro private sono tre puntatori che rispettivamente puntano: al primo elemento, alla posizione 
+successiva all'ultimo elemento del vettore e alla posizione successiva all'ultima posizione allocata

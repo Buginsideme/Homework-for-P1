@@ -1,16 +1,4 @@
-//Description in main_es_2.cpp
-
 #include"prodotto.h"
-
-
-/*prodotto::prodotto()
-{
-        //cout<<"\nCostruttore senza argomenti.";
-        strcpy(cod,"");
-        descrizione=new char[1];
-        produttore="";
-        costo=0;
-}*/
 
 prodotto::prodotto(const char * C, const char * d, string p, float c)
 {

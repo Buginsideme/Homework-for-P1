@@ -22,7 +22,6 @@ private:
         float costo;
         bool check_is_valid(const char *) const;
 public:
-        //prodotto();
         prodotto(const char * ="XX000000", const char * ="", string ="", float =0);
         prodotto(const prodotto &);
         const prodotto & operator=(const prodotto &);

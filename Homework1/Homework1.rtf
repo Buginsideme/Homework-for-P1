@@ -1,0 +1,74 @@
+Testo della Esercitazione
+
+Si sviluppi un programma che consenta di effettuare alcune operazioni su un vettore di numeri complessi. Un numero complesso è una coppia ordinata di numeri reali rappresentato mediante un record contenente due campi di tipo double: un campo Re (rappresentante il coefficiente reale), un campo Imm (rappresentante il coefficiente dell’immaginario). Si definisca (utilizzando il typedef) il tipo “Complesso” ed il tipo “Vettore” (di numeri complessi).  Si sviluppino le seguenti funzioni/procedure che operano sul tipo “Complesso” e sul tipo  “Vettore” di cui si fornisce il prototipo:
+void leggiComplex(Complesso &); 
+Effettua l’ingresso da tastiera di un numero complesso, e cioè dei due reali che vengono usati per assegnare i campi Re ed Imm
+void stampaComplex(const Complesso);
+Visualizza il numero complesso fornito in ingresso alla funzione in un formato stabilito (ad esempio: (3,4; 5) per il numero 3,4+5i)
+Complesso sommaComplex(const Complesso, const Complesso);
+Effettua la somma dei numeri complessi forniti in ingresso, restituisce il risultato
+Complesso prodottoComplex(const Complesso, const Complesso);
+Effettua il prodotto dei numeri complessi forniti in ingresso alla funzione, restituisce il risultato
+double moduloComplex(const Complesso);
+Calcola il modulo del numero complesso fornito in ingresso alla funzione, restituisce il risultato
+void LeggiElementi(Vettore Vet, int & nelem);
+Effettua l’inserimento di un vettore di numeri complessi, usa la funzione leggiComplex
+void StampaVettore(const Vettore Vet, const int nelem)
+Visualizza un vettore di numeri complessi fornito in ingresso alla funzione, usa la funzione stampaComplex
+void ModuloBubbleSort(Vettore, const int);  
+Ordina per moduli crescenti un vettore di numeri complessi fornito in ingresso alla funzione mediante un algoritmo di ordinamento Bubble Sort (a bolle), usa la funzione moduloComplex
+
+Si consiglia di realizzare le funzioni operanti sul tipo complesso e di testarle, prima di realizzare il vettore e le funzioni operanti sul vettore. Rispettando le indicazioni circa gli identificativi ed i prototipi delle funzioni sopra fornite, è possibile effettuare un test delle operazioni sul tipo complesso e poi dell’intero programma usando (separatamente)  i seguenti main di prova:
+
+// ESEMPIO DI MAIN PER IL TEST DEL TIPO COMPLESSO
+
+int main() {
+Complesso c1, c2, somma, prodotto;
+//acquisizione dati 
+cout << "\n Lettura di C1: ";
+leggiComplex(c1);
+cout << "\n Lettura di C2: ";
+leggiComplex(c2);
+//modulo
+cout << "\n Il modulo di C1: " << moduloComplex(c1);
+cout << "\n Il modulo di C2: " << moduloComplex(c2);
+//somma 
+somma=sommaComplex(c1,c2);
+cout << "\n somma: ";
+stampaComplex(somma);
+//prodotto 
+prodotto=prodottoComplex(c1,c2);
+cout << "\n prodotto: ";
+stampaComplex(prodotto);
+
+system("PAUSE");
+return 0; }
+
+// ESEMPIO DI MAIN PER IL TEST DEL  PROGRAMMA
+
+int main() {
+
+Vettore V;
+Complesso C;
+int n;
+cout << "\n Inserimento del vettore di numeri complessi.";
+LeggiElementi(V,n);
+cout << "\n Stampa del vettore inserito.";
+StampaVettore(V,n);
+cout << "\n";
+cout << "\n Stampa sequenziale dei moduli nel vettore non ordinato.";
+cout << "\n";
+for (int i=0; i<n; i++)
+  cout << moduloComplex(V[i])<< endl;
+cout << "\n";
+cout << "\n Ordino il vettore per moduli crescenti.";
+ModuloBubbleSort(V,n);
+cout << "\n Fatto.";
+cout << "\n Stampa sequenziale dei moduli nel vettore ordinato.";
+cout << "\n";
+for (int i=0; i<n; i++)
+  cout << moduloComplex(V[i])<< endl;
+cout << "\n";   
+system("PAUSE");
+return 0;
+}

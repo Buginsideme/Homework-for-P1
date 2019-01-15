@@ -18,9 +18,9 @@ public:
         voce(const int =0, const char * ="");
         voce(const voce &);
         const voce & operator=(const voce &);
-        int get_chiave() const;
-        const char * get_descrizione() const;
-        void set_chiave(int);
+        int get_chiave() const {return chiave;}
+        const char * get_descrizione() const {return descrizione;}
+        void set_chiave(int & c) {chiave=c;}
         void set_descrizione(const char *);
         bool operator==(const voce &) const;
         bool operator!=(const voce &) const;

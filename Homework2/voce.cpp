@@ -26,21 +26,6 @@ const voce & voce::operator=(const voce & v)
 	return *this;
 }
 
-int voce::get_chiave() const
-{
-	return chiave;
-}
-
-const char * voce::get_descrizione() const
-{
-	return descrizione;
-}
-
-void voce::set_chiave(int c)
-{
-	chiave=c;
-}
-
 void voce::set_descrizione(const char * d)
 {
 	delete [] descrizione;

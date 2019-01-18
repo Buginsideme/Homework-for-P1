@@ -1,4 +1,3 @@
-//TODO:Implementare la resize
 //Description in Homework3.rtf
 
 #include"dynvet.h"
@@ -10,12 +9,12 @@ dynvet::dynvet(int n) : size(n)
                 count=size;
         }
         count=n;
-        v=new T [size];
+        v=new T [count];
 }
 
 dynvet::dynvet(const dynvet & d)
 {
-        v=new T [d.size];
+        v=new T [d.count];
         size=d.size;
         count=d.count;
         for (int i=0; i<size; i++)
@@ -27,7 +26,7 @@ const dynvet & dynvet::operator=(const dynvet & d)
         if (this!=&d) {
                 if (v)
                         delete [] v;
-                v=new T [d.size];
+                v=new T [d.count];
                 size=d.size;
                 count=d.count;
                 for (int i=0; i<size; i++)
@@ -70,17 +69,26 @@ void dynvet::pop_back()
         }
 }
 
-/*void dynvet::resize()
+bool dynvet::resize()
 {
-        if (!empty() && (size<count)) {
+        if (!empty() && (size<=count)) {
                 count*=2;
+                T * tmp = new T [size];
+                for (int i=0; i<size; i++)
+                        tmp[i]=v[i];
+                delete [] v;
+                v = new T [count];
+                for (int i=0; i<size; i++)
+                        v[i]=tmp[i];
+                delete [] tmp;
+                return true;
         }
-}*/
+}
 
 void dynvet::push_back()
 {
         int ele;
-        if (size<count) {
+        if (resize()) {
                 cout<<"\nInserisci l'elemento: ";
                 cin>>ele;
                 for(int i=size;i>=size-1;i--)

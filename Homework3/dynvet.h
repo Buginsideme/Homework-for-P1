@@ -1,4 +1,3 @@
-//TODO:Implementare la resize
 //Description in Homework3.rtf
 
 #ifndef _dynvet_h
@@ -18,7 +17,7 @@ private:
         T *v;
         int size;
         int count;
-        // void resize();  //ridimensionare il vettore a una data dimensione
+        bool resize();  //ridimensionare il vettore a una data dimensione
 public:
         explicit dynvet(const int =2);
         dynvet(const dynvet &);

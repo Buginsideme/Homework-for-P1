@@ -1,4 +1,3 @@
-//TODO:Implementare la resize
 //Description in Homework3.rtf
 
 #include"dynvet.h"

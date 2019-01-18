@@ -69,9 +69,8 @@ void dynvet::pop_back()
         }
 }
 
-bool dynvet::resize()
+void dynvet::resize()
 {
-        if (!empty() && (size<=count)) {
                 count*=2;
                 T * tmp = new T [size];
                 for (int i=0; i<size; i++)
@@ -81,21 +80,20 @@ bool dynvet::resize()
                 for (int i=0; i<size; i++)
                         v[i]=tmp[i];
                 delete [] tmp;
-                return true;
-        }
 }
 
 void dynvet::push_back()
 {
         int ele;
-        if (resize()) {
-                cout<<"\nInserisci l'elemento: ";
-                cin>>ele;
-                for(int i=size;i>=size-1;i--)
-                        v[i+1]=v[i];
-                v[size]=ele;
-                size++;
+        if (size>=count) {
+                resize();
         }
+        cout<<"\nInserisci l'elemento: ";
+        cin>>ele;
+        for(int i=size;i>=size-1;i--)
+                v[i+1]=v[i];
+        v[size]=ele;
+        size++;
 }
 
 dynvet::~dynvet()

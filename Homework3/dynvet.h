@@ -17,7 +17,7 @@ private:
         T *v;
         int size;
         int count;
-        bool resize();  //ridimensionare il vettore a una data dimensione
+        void resize();  //ridimensionare il vettore a una data dimensione
 public:
         explicit dynvet(const int =2);
         dynvet(const dynvet &);

@@ -4,10 +4,16 @@
 using namespace std;
 
 int main () {
-        dynvet test(3);
+        dynvet test(5);
         cin>>test;
         test.pop_back();
         cout<<test;
+        cout<<"\nElementi allocati: "<<test.get_count();
+        cout<<"\nLunghezza array: "<<test.get_size();
+        test.push_back();
+        cout<<test;
+        cout<<"\nElementi allocati: "<<test.get_count();
+        cout<<"\nLunghezza array: "<<test.get_size();
         test.push_back();
         cout<<test;
         cout<<"\nElementi allocati: "<<test.get_count();

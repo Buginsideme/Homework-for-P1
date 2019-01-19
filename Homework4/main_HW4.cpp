@@ -1,10 +1,9 @@
+//Description in Homework4.rtf
 #include"conto.h"
 using namespace mionamespace;
 
 int main() {
-        conto_corrente test("Luigi",24);
-        cout<<"\nVa";
-
+        // ordinario test("Luigi",1,10);
         cout<<"\n\n";
         return 0;
 }

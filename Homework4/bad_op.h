@@ -1,3 +1,4 @@
+//Description in Homework4.rtf
 #ifndef _bad_op_h
 #define _bad_op_h
 #include <string>

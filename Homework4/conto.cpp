@@ -1,3 +1,4 @@
+//Description in Homework4.rtf
 #include"conto.h"
 using namespace mionamespace;
 
@@ -30,7 +31,7 @@ const conto_corrente & conto_corrente::operator=(const conto_corrente & c)
                 ncon=c.ncon;
                 nmax=c.nmax;
                 nmov=c.nmov;
-                mov = new float [c.nmax];
+                mov = new float [c.nmov];
                 for (int i=0; i<nmov; i++)
                         mov[i]=c.mov[i];
         }
@@ -40,7 +41,7 @@ const conto_corrente & conto_corrente::operator=(const conto_corrente & c)
 bool conto_corrente::versamento(const float v)
 {
         if (v<0)
-                throw "eccezione versamento negativo";
+                throw operazione("\nErrore: versamento negativo");
      	else {
                 mov[nmov]=v;
                 nmov++;
@@ -59,14 +60,33 @@ float conto_corrente::calcolo_saldo() const
 bool conto_corrente::prelievo(const float p)
 {
         if (p>0)
-                throw "eccezione prelievo positivo";
-        if (nmov==0)
+                throw operazione("\nErrore: prelievo positivo");
+        if (nmov==0) {
+                cout<<"\nImpossibile prelevare, saldo: "<<calcolo_saldo();
                 return false;
-        else if(calcolo_saldo() < -p)
+        }
+        else if(calcolo_saldo() < -p) {
+                cout<<"\nImpossibile prelevare un valore superiore al saldo: "<<calcolo_saldo();
                 return false;
-	else {
+        } else {
                 mov[nmov]=p;
                 nmov++;
                 return true;
         }
+}
+
+ostream & conto_corrente::stampa_mov( ostream & out) const
+{
+        out<<"\nConto: "<<ncon<<endl;
+        out<<"\nMovimenti: ";
+        for (int i=0; i<nmov; i++)
+                out<<mov[i]<<' ';
+        return out;
+}
+
+ostream & conto_corrente::stampa_saldo(ostream & out) const
+{
+        out<<"\nConto: "<<ncon<<endl;
+        out<<"\nSaldo: "<<calcolo_saldo();
+        return out;
 }

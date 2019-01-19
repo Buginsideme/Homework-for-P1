@@ -90,8 +90,6 @@ void dynvet::push_back()
         }
         cout<<"\nInserisci l'elemento: ";
         cin>>ele;
-        for(int i=size;i>=size-1;i--)
-                v[i+1]=v[i];
         v[size]=ele;
         size++;
 }

@@ -1,0 +1,45 @@
+Homework 4
+
+I conti corrente bancari possono essere di diversi tipi. In particolare distinguiamo tra conto corrente ordinario e conto 
+corrente a pacchetto. Si sviluppi la gerarchia costituita dalle classi conto  corrente, conto ordinario e conto a pacchetto 
+di seguito descritte.
+
+La classe conto corrente è una classe astratta che contiene le variabili membro: 
+titolare (di tipo string), 
+numero di conto (intero), 
+movimenti (sia un vettore di numeri reali allocato dinamicamente),
+numero massimo di movimenti consentito (intero, serve a dimensionare il vettore),
+numero movimenti (intero, in pratica il riempimento del vettore).
+
+Ogni elemento del vettore contiene un numero positivo o un numero  negativo che indica il contante versato o prelevato dal
+conto corrente). La classe fornisca le funzionalità necessarie ad una corretta  gestione dell'estensione dinamica, ed inoltre
+le seguenti funzioni membro: prelievo (inserisce nel vettore un valore negativo ricevuto in ingresso), versamento
+(inserisce nel vettore un valore positivo ricevuto in ingresso), calcolo del saldo, calcolo delle spese del conto,
+stampa del saldo, stampa dei movimenti (che stampano anche il numero di conto e possono essere utilizzate sia per una
+visualizzazione che per la stampa su file di testo). La classe fornisce anche le funzioni set relative unicamente al
+titolare e al numero di conto .Le operazioni di prelievo e versamento sono soggette ai seguenti vincoli:
+-la prima operazione sul vettore deve essere un versamento,  rappresenta cioè il saldo alla data
+-non si può prelevare una cifra che non è nella disponibilità del conto
+-non si può avere in ingresso alla funzione prelievo un numero positivo
+-non si può avere in ingresso alla funzione versamento un numero negativo
+
+Negli ultimi due casi le funzioni lanciano una eccezione di tipo bad_op (fornita dallo studente) che porta con sé
+l'informazione relativa alla operazione e al valore che hanno causato l'eccezione. Nei primi due casi si segnali l'insuccesso
+dell'operazione senza ricorrere ad una eccezione.
+
+Un conto corrente ordinario è un conto a consumo per il quale cioè le spese dipendono dal numero di operazioni effettuate:
+maggiore numero di movimenti fatti quindi, maggiore la spesa annua. La classe estende la classe conto corrente aggiungendo
+due variabili membro, una di tipo reale e una di tipo intero, che indicano rispettivamente il costo relativo ad un certo
+numero di operazioni (ad esempio 0,02 euro ogni 3  operazioni). La classe ridefinisce la funzione calcola spesa presente
+nella classe conto corrente, che calcola la spesa corrente per il conto in base al numero di movimenti effettuati.
+
+Un conto base prevede un certo canone mensile o annuo, e può essere "con   franchigia", in cui il canone include un numero
+limitato di operazioni gratuite, e  "senza franchigia", in cui è possibile effettuare un numero  illimitato di operazioni
+gratuite, pagando cioè solo il canone. La classe quindi aggiunge le variabili membro  per rappresentare il canone (intero),
+se il conto è con  franchigia (booleano) e il numero di operazioni gratuite in caso di conto con franchigia. La classe
+ridefinisce la funzione calcola spesa presente nella classe conto corrente, che calcola la spesa corrente per il conto
+in base al valore delle variabili membro proprie e (eventualmente) in base al numero di movimenti effettuati.
+
+Si sviluppi un programma che simuli un certo numero di operazioni almeno su due conti correnti di tipo differente per
+effettuare il test delle classi realizzate (inclusa la stampa su file di tipo testo) e fornisca un esempio di binding
+dinamico per la funzione di calcolo della spesa.

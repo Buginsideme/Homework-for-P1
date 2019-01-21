@@ -1,6 +1,6 @@
 //Description in Homework4.rtf
 #include"conto.h"
-using namespace mionamespace;
+namespace mionamespace {
 
 conto_corrente::conto_corrente(string t, const int nc, const int nm)
 {
@@ -90,3 +90,5 @@ ostream & conto_corrente::stampa_saldo(ostream & out) const
         out<<"\nSaldo: "<<calcolo_saldo();
         return out;
 }
+
+} //end_namespace

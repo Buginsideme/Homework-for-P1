@@ -63,6 +63,6 @@ public:
 
 };
 
-}; /*mionamespace */
+} //end_namespace
 
 #endif //_conto_h
